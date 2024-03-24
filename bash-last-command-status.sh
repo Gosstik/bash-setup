@@ -1,0 +1,16 @@
+#!/bin/bash
+
+PROMPT_LAST_COMMAND_OK="${BOLD_GREEN}✔"
+PROMPT_LAST_COMMAND_FAIL="${BOLD_RED}✘"
+
+function last_command_indicator() {
+  LAST_COMMAND_STATE=$?
+
+  if [ "${LAST_COMMAND_STATE}" -eq 0 ]; then
+    LAST_COMMAND_INDICATOR="${PROMPT_LAST_COMMAND_OK}";
+  else
+    LAST_COMMAND_INDICATOR="${PROMPT_LAST_COMMAND_FAIL}";
+  fi
+
+  echo "${LAST_COMMAND_INDICATOR}"
+}
