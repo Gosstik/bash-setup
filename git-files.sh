@@ -286,7 +286,7 @@ function __git_status() {
     remote="_NO_REMOTE_TRACKING_"
     remote_url='.'
   elif [[ "${branch}" == *"no branch"* ]]; then
-    tag=$( git describe --tags --exact-match )
+    tag=$( git describe --tags --exact-match 2>/dev/null)
     if [[ -n "${tag}" ]]; then
       branch="_PRETAG_${tag}"
       detached_head=1
