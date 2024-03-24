@@ -486,7 +486,6 @@ __git_ps1 ()
 			b="${head#ref: }"
 			if [ "$head" = "$b" ]; then
 				detached=yes
-				echo "HERE"
 				b="$(
 				case "${GIT_PS1_DESCRIBE_STYLE-}" in
 				(contains)
@@ -494,7 +493,6 @@ __git_ps1 ()
 				(branch)
 					git describe --contains --all HEAD ;;
 				(tag)
-				  echo "HERE"
 					git describe --tags HEAD ;;
 				(describe)
 					git describe HEAD ;;
