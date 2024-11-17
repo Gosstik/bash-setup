@@ -242,10 +242,11 @@ function __git_status() {
         DD) ((num_conflicts++)); break;;
         AA) ((num_conflicts++)); break;;
         #two character matches, first loop
-        ?M) ((num_changed++)) ;;
+        ?M) ((num_changed++)); break ;;
+        \ D) ((num_changed++)); break ;;
         ?\ ) ;;
         #single character matches, second loop
-        U) ((num_conflicts++)) ;;
+        U) ((num_conflicts++)); break;;
         \ ) ;;
         *) ((num_staged++)) ;;
       esac
